@@ -2,9 +2,9 @@ class Public::CustomersController < ApplicationController
   def show
   end
 
-  def update
+  def edit
   end
 
-  def edit
+  def update
   end
 end

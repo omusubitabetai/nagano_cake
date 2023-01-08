@@ -11,9 +11,9 @@ class Public::OrdersController < ApplicationController
   def thanx
   end
 
-  def index
-  end
-
   def show
+  end
+  
+  def index
   end
 end
