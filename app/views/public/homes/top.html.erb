@@ -6,5 +6,14 @@
     </p>
 </div>
 
-<h2>新着商品</h2>
+<h2>新着商品一覧</h2>
+<% @items.each do |item| %>
+<% if item.image.attached? %>
+  <%= image_tag item.image, size: "300x300" %>
+<% else %>
+  <%= image_tag 'no_image', size: "300x300" %>
+<% end %>
+<%= item.name %>
+<% end %>
 
+<p><%= link_to "全ての商品をみる", public_items_path %></p>
