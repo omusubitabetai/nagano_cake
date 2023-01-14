@@ -1,0 +1,6 @@
+<h2>退会画面</h2>
+
+<h4>本当に退会しますか？</h4>
+
+<%= link_to "退会しない", public_customers_quit_path %>
+<%= link_to "退会する", public_customers_quit_path, method: :patch, data: { confirm: "本当に退会しますか？" } %>

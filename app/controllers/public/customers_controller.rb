@@ -7,6 +7,9 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
   end
 
+  def quit
+  end
+
   def update
   end
 end
