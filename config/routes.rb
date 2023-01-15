@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root "homes#top"
     get "/about" => "homes#about"
     get "/customers/quit" => "customers#quit"
+    patch "/customers/out" => "customers#out"
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
     resources :customers, only: [:show, :update, :edit]
     resources :orders, only: [:new, :create, :show, :index]

@@ -16,9 +16,11 @@
       <li>
         <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
       </li>
+    <% elsif customer_signed_in? %>
+    ログインしています。
     <% else %>
       <li>
-        <%= link_to "ログイン", new_admin_session_path %>
+        <%= link_to "ログイン", new_customer_session_path %>
       </li>
     <% end %>
   </header>

@@ -10,6 +10,13 @@ class Public::CustomersController < ApplicationController
   def quit
   end
 
+  def out
+    @customer = current_customer
+    @customer.update(is_deleted:true)
+    reset_session
+    redirect_to new_customer_registration_path
+  end
+
   def update
   end
 end
