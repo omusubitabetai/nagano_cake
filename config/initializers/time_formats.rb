@@ -1,0 +1,1 @@
+Time::DATE_FORMAT[:datetime_jp] = "%Y/%m/%d %H:%M:%S"
