@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/about" => "homes#about"
     get "/customers/quit" => "customers#quit"
     patch "/customers/out" => "customers#out"
+
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
     resources :customers, only: [:show, :update, :edit]
     resources :orders, only: [:new, :create, :show, :index]
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
     get "/" => "homes#top"
     resources :orders, only: [:show, :update]
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :genres, only: [:index, :edit, :create, :update]
     resources :items, only: [:index, :create, :new, :show, :edit, :update]
     resources :order_details, only: [:update]
   end

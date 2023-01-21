@@ -13,7 +13,6 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
   
-  
   <div class="actions">
     <%= f.submit "ログイン" %>
   </div>
@@ -21,4 +20,5 @@
 
   <h4>会員登録がお済みでない方</h4>
   
-  <p><%= render "public/shared/links" %>から新規登録を行なってください。</p>
+  <p><%= link_to "こちら", "/members/sign_up" %>から新規登録をしてください</p>
+
