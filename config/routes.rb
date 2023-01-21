@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
     resources :customers, only: [:show, :update, :edit]
     resources :orders, only: [:new, :create, :show, :index]
+    delete "/cart_items/all_destroy" => "cart_items#destroy_all"
     resources :cart_items, only: [:index, :create, :destroy, :update]
     resources :items, only: [:index, :show]
   end
