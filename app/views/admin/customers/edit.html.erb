@@ -1,51 +1,58 @@
-<h2><%= @customer.last_name + @customer.first_name %>さんの会員詳細</h2>
+<div class="container">
 
-<%= form_with model: @customer, url: admin_customer_path(@customer.id), local: :true, method: :put do |f| %>
+  <h2 class="text-center m-5"><%= @customer.last_name + @customer.first_name %>さんの会員詳細</h2>
+  <div class="row d-flex justify-content-center">
 
-<div class="field">
-  <%= f.label :名前 %>
-  <%= f.label :（姓） %>
-  <%= f.text_field :last_name, :size => "10", placeholder: "令和" %>
-  <%= f.label :（名） %>
-  <%= f.text_field :first_name, :size => "10", placeholder: "道子" %>
+  <%= form_with model: @customer, url: admin_customer_path(@customer.id), local: :true, method: :put do |f| %>
+  <div class="col-xs-10 offset-1">
+  <div class="form-group col-xs-9">
+  <%= f.label :"会員ID", class: "col-sm-4" %>
+  <%= f.label :"#{@customer.id}" %>
   </div>
 
-  <div class="field">
-  <%= f.label :フリガナ %>
-  <%= f.label :（セイ） %>
-  <%= f.text_field :last_name_kana, :size => "10", placeholder: "レイワ" %>
-  <%= f.label :（メイ） %>
-  <%= f.text_field :first_name_kana, :size => "10", placeholder: "ミチコ" %>
+　<div class="form-group col-xs-9">
+  <%= f.label :氏名, class: "col-sm-4 control-label" %>
+  <%= f.text_field :last_name, :size => "10", placeholder: "令和", class: "col-sm-3 form-control-static" %>
+  <%= f.text_field :first_name, :size => "10", placeholder: "道子", class: "col-sm-3 form-control-static name" %>
   </div>
 
-  <div class="field">
-    <%= f.label :メールアドレス %>
-    <%= f.email_field :email, :size => "25", placeholder: "sample@example.com", autofocus: true, autocomplete: "email" %>
+  <div class="form-group col-xs-9">
+  <%= f.label :フリガナ, class: "col-sm-4 control-label" %>
+  <%= f.text_field :last_name_kana, :size => "10", placeholder: "レイワ", class: "col-sm-3 form-control-static name" %>
+  <%= f.text_field :first_name_kana, :size => "10", placeholder: "ミチコ", class: "col-sm-3 form-control-static name" %>
   </div>
 
-  <div class="field">
-  <%= f.label :郵便番号（ハイフンなし） %>
-  <%= f.text_field :postal_code, :size => "10", placeholder: "1001000", id: "customer_postcode" %>
+  <div class="form-group col-xs-9">
+  <%= f.label :メールアドレス, class: "col-sm-4 control-label" %>
+  <%= f.email_field :email, :size => "25", placeholder: "sample@example.com", autofocus: true, autocomplete: "email", class: "col-sm-6" %>
   </div>
 
-  <div class="field">
-  <%= f.label :住所 %>
-  <%= f.text_field :address, :size => "40", placeholder: "東京都渋谷区代々木神園町0-0", id: "customer_address" %>
+  <div class="form-group col-xs-9">
+  <%= f.label :郵便番号, class: "col-sm-4 control-label" %>
+  <%= f.text_field :postal_code, :size => "10", placeholder: "1001000", id: "customer_postcode", class: "col-sm-3" %>
   </div>
 
-  <div class="field">
-  <%= f.label :電話番号（ハイフンなし）%>
-  <%= f.text_field :telephone_number, placeholder: "08012345678" %>
+  <div class="form-group col-xs-9">
+  <%= f.label :住所, class: "col-sm-4 control-label" %>
+  <%= f.text_field :address, :size => "50", placeholder: "東京都渋谷区代々木神園町0-0", id: "customer_address", class: "col-sm-7" %>
   </div>
 
-  <div class="field">
-  <%= f.label :会員ステータス %>
+  <div class="form-group col-xs-9">
+  <%= f.label :電話番号, class: "col-sm-4 control-label"%>
+  <%= f.text_field :telephone_number, placeholder: "08012345678", class: "col-sm-4" %>
+  </div>
+
+  <div class="form-group col-xs-9">
+  <%= f.label :会員ステータス, class: "col-sm-4 control-label" %>
   <%= f.radio_button :is_deleted, :false %>
   <%= f.label :is_deleted, "有効" %>
   <%= f.radio_button :is_deleted, :true %>
   <%= f.label :is_deleted, "退会" %>
   </div>
 
-  <%= f.submit "変更を保存" %>
-
-<% end %>
+  <div class="form-group col-xs-9 d-flex justify-content-around">
+  <%= f.submit "変更を保存",class: "btn btn-success" %>
+  </div>
+ <% end %>
+ </div>
+</div>
