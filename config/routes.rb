@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
 
   devise_for :admin, skip: [:registrations,:passwords] ,controllers: {
-  sessions: 'admin/sessions',
+  sessions: 'admin/sessions'
   }
 
   namespace :admin do
@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     get '/about' => 'homes#about'
     delete '/cart_items/all_destroy' => 'cart_items#destroy_all'
     resources :items, only: [:index, :show]
+    get '/customers/edit' => 'customers#edit'
+    patch '/customers/update' => 'customers#update'
     patch '/customers/out' => 'customers#out'
     get '/customers/quit' => 'customers#quit'
 
