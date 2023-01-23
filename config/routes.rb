@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     patch '/customers/update' => 'customers#update'
     patch '/customers/out' => 'customers#out'
     get '/customers/quit' => 'customers#quit'
+    get '/addresses/public' => 'addresses#index'
 
     resources :cart_items
     post '/orders' => 'orders#create'

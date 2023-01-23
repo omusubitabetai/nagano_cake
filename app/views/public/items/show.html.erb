@@ -1,10 +1,26 @@
-<%= image_tag @item.image, size: "340x220", fallback: "no_image.jpg" %>
-<h3><%= @item.name %></h3>
-<p><%= @item.introduction %></p>
-<p>¥ <%= @item.price %> (税込)</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="row" style="margin-top: 50px;">
+        <div style="float: left; margin: 15px 50px;">
+      <%= image_tag @item.image, size: "340x220", fallback: "no_image.jpg" %>
+    </div>
+        <div style="width:250px; height:100px; float:left;">
+          <h3><%= @item.name %></h3><br>
+          <p><%= @item.introduction %></p>
+          <p>¥ <%= @item.price %> (税込)</p>
+        </div>
+      </div>
 
-<%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
-<%= f.hidden_field :item_id, :value => @item.id %>
-<%= f.select :amount, *[1..10] %>
-<%= f.submit "カートに入れる" %>
-<%end%>
+      <div class="col-xs-7">
+        <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
+        <%= f.hidden_field :item_id, :value => @item.id %>
+      <div class="text-right">
+        <%= f.number_field :number_of_items , placeholder: "個数選択", min: 1, max: 20 %>
+        <%= f.submit "カートに入れる" , class: "btn btn-success"%>
+        <%end%>
+      </div>
+    </div>
+   </div>
+ </div>
+</div>
