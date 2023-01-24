@@ -16,7 +16,7 @@
         <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
         <%= f.hidden_field :item_id, :value => @item.id %>
       <div class="text-right">
-        <%= f.number_field :number_of_items , placeholder: "個数選択", min: 1, max: 20 %>
+        <%= f.select :amount, *[1..10], {include_blank: "個数選択"} %>
         <%= f.submit "カートに入れる" , class: "btn btn-success"%>
         <%end%>
       </div>
