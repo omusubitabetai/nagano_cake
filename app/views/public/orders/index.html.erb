@@ -1,6 +1,7 @@
-<h2>注文履歴一覧</h2>
+<div class="container">
+  <h2>注文履歴一覧</h2>
 
-  <table>
+  <table class="table-bordered">
     <tr>
       <th>注文日</th>
       <th>配送先</th>
@@ -17,10 +18,10 @@
           <%= order_item.item.item_name %>
         <% end %>
         </td>
-        <td><%= order.total_fee %></td>
+        <td><%= order.total_price %></td>
         <td><%= order.order_status %></td>
-        <td><%= link_to "注文詳細", public_order_path(order) %></td>
+        <td><%= link_to "注文履歴詳細", public_order_path(order) %></td>
       </tr>
     <% end %>
-    </table>
-	</table>
+  </table>
+</div>
