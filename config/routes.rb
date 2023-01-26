@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
     resources :cart_items
     post '/orders' => 'orders#create'
-    get '/orders/confirm' => 'orders#confirm'#注文情報確認画面の編集が終わったら、getからpostに戻すこと！
+    post '/orders/confirm' => 'orders#confirm'#注文情報確認画面の編集が終わったら、getからpostに戻すこと！
     get '/orders/thanx' => 'orders#thanx'
     resources :orders, only: [:new,:create,:show,:index]
     resource :customers, only:[:show ,:edit,:update]
