@@ -2,11 +2,14 @@
   <div class="row">
     <div class="col-xs-12 mx-auto">
       <div class="text-center">
-        <span>Welcome to Naganocake!</span><br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
+        <h2>Welcome to ながのcake!</h2><br>
+        <p>このサイトは、ケーキ販売のECサイトになります。<br>
         会員でない方も商品の閲覧はできますが、<br>
-        購入には会員登録が必要になります。
-        </p>
+        購入には会員登録が必要になります。<br>
+        ※会員の方は、<%= link_to "こちら", new_admin_session_path %>からログインしてください。</p>
+
+
+        <p><%= image_tag 'cake_shop_photo', size: "500x300" %></p><br>
      </div>
     </div>
 　</div>
@@ -18,12 +21,12 @@
     <div class="row">
       <% @items.each do |item| %>
       <% if item.image.attached? %>
-      <%= image_tag item.image, size: "120x120" %>
+      <%= image_tag item.image, size: "120x120" %><br>
       <% else %>
-      <%= image_tag 'no_image', size: "120x120" %>
+      <%= image_tag 'no_image', size: "120x120" %><br>
       <% end %>
-      <p><%= item.name %></p>
-      <p>¥ <%= item.price %></p>
+      <%= item.name %><br>
+      ¥ <%= item.price %>
       <% end %>
     </div>
     <div class="items-link text-right"><%= link_to "全ての商品をみる", public_items_path %></div>

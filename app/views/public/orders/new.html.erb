@@ -6,8 +6,8 @@
       <%= form_with(model: @order, local: true, url: public_orders_confirm_path, method: :post) do |f| %>
 
         <h4><strong>支払い方法</strong></h4>
-          <label><%= f.radio_button :payment_method, 0, checked: "checked"%> クレジットカード</lavel><br>
-          <label><%= f.radio_button :payment_method, 1 %> 銀行振込</lavel>
+          <label><%= f.radio_button :payment_method, Order.payment_methods.key(0), checked: "checked"%> クレジットカード</lavel><br>
+          <label><%= f.radio_button :payment_method, Order.payment_methods.key(1) %> 銀行振込</lavel>
 
         <h4><strong>お届け先</strong></h4>
           <label><%= f.radio_button :address_number,1,checked: "checked" %> ご自身の住所 </label><br>

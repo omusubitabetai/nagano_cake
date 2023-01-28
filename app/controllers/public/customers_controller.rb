@@ -7,6 +7,15 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
   end
 
+  def update
+    @customer = current_customer
+    if @customer.update(customer_params)
+      redirect_to public_customers_path
+    else
+      render :edit
+    end
+  end
+
   def quit
   end
 
@@ -17,6 +26,9 @@ class Public::CustomersController < ApplicationController
     redirect_to new_customer_registration_path
   end
 
-  def update
+  private
+
+  def customer_params
+    params.require(:customer).permit(:last_name,:first_name,:last_name_kana,:first_name_kana,:email,:postal_code,:address,:telephone_number)
   end
 end

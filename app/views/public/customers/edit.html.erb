@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="my-5">会員情報編集</h2>
     <div class="row">
-      <%= form_with model:@customer,url:edit_customer_registration_path, method: :patch, local: true do |f|%>
+      <%= form_with model:@customer,url:public_customers_update_path, method: :patch, local: true do |f|%>
 
     <div class="col-xs-12">
       <div class="form-group row">

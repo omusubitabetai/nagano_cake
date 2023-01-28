@@ -19,9 +19,12 @@
               <td class="align-middle"><%= order.created_at.strftime('%Y/%m/%d') %></td>
               <td class="align-middle"><%= "〒#{order.postal_code}" %><br><%= order.address %><br><%= order.name %></td>
               <td class="align-middle" style="word-break:break-all">
+                <% order.order_details.each do |order_detail| %>
+                <%= order_detail.item.name %></br>
+                <% end %>
               </td>
               <td class="align-middle"><%= "#{order.total_payment}円" %></td>
-              <td class="align-middle"><%= order.order_status %></td>
+              <td class="align-middle"><%= order.status %></td>
               <td class="align-middle"><%= link_to "表示する", public_order_path(order), class: "btn btn-primary"  %></td>
             </tr>
           <% end %>
