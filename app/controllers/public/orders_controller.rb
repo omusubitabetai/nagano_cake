@@ -4,6 +4,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -29,6 +30,8 @@ class Public::OrdersController < ApplicationController
     redirect_to public_orders_thanx_path
   end
 
+  private
+  
   def order_params
     params.permit(:payment_method, :address, :postal_code, :name)
   end
