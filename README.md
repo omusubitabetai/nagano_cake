@@ -1,6 +1,6 @@
 # アプリケーション名
 
-*ながのCAKE*
+**ながのCAKE**
 
 # アプリケーションURL
 
@@ -8,7 +8,7 @@ https://github.com/omusubitabetai/nagano_cake
 
 # アプリケーション詳細
 
-ケーキ屋さんのECサイトです。
+**ケーキ屋さんのECサイトです。**
 
 # 使用言語
 
