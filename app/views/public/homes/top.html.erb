@@ -16,18 +16,22 @@
 </div>
 
 
-<div class="container new-item">
+<div class="container">
   <h2>新着商品一覧</h2>
-    <div class="row">
       <% @items.each do |item| %>
+    <div class="row" style="display: inline-block; margin-right: 30px;">
+    <div>
       <% if item.image.attached? %>
-      <%= image_tag item.image, size: "120x120" %><br>
+      <%= image_tag item.image, size: "200x150" %>
       <% else %>
-      <%= image_tag 'no_image', size: "120x120" %><br>
-      <% end %>
-      <%= item.name %><br>
-      ¥ <%= item.price %>
-      <% end %>
+      <%= image_tag 'no_image', size: "120x120" %>
+      <% end %><br>
     </div>
+    <div>
+      <%= item.name %><br>
+    ¥ <%= item.price %>
+    </div>
+    </div>
+      <% end %>
     <div class="items-link text-right"><%= link_to "全ての商品をみる", public_items_path %></div>
 </div>
