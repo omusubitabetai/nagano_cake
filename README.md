@@ -1,24 +1,21 @@
-# README
+# アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**ながのCAKE**
 
-Things you may want to cover:
+# アプリケーションURL
 
-* Ruby version
+https://github.com/omusubitabetai/nagano_cake
 
-* System dependencies
+# アプリケーション詳細
 
-* Configuration
+**ケーキ屋さんのECサイトです。**
 
-* Database creation
+# 使用言語
 
-* Database initialization
+・HTML&SCSS
+・Ruby
+・JavaScript
 
-* How to run the test suite
+# フレームワーク
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・Ruby on Rails(6.1.7)
