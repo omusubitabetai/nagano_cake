@@ -21,11 +21,13 @@
       <% @items.each do |item| %>
     <div class="row" style="display: inline-block; margin-right: 30px;">
     <div>
-      <% if item.image.attached? %>
-      <%= image_tag item.image, size: "200x150" %>
-      <% else %>
-      <%= image_tag 'no_image', size: "120x120" %>
-      <% end %><br>
+      <%= link_to public_item_path(item.id) do %>
+        <% if item.image.attached? %>
+        <%= image_tag item.image, size: "200x150" %>
+        <% else %>
+        <%= image_tag 'no_image', size: "120x120" %>
+        <% end %><br>
+      <% end %>
     </div>
     <div>
       <%= item.name %><br>
