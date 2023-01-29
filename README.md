@@ -1,16 +1,21 @@
-#アプリケーション名
+# アプリケーション名
+
 ながのcake
 
-#アプリケーションURL
+# アプリケーションURL
+
 https://github.com/omusubitabetai/nagano_cake
 
-#アプリケーション詳細
+# アプリケーション詳細
+
 ケーキ屋さんのECサイトです。
 
-#使用言語
+# 使用言語
+
 ・HTML&SCSS
 ・Ruby
 ・JavaScript
 
-#フレームワーク
+# フレームワーク
+
 ・Ruby on Rails(6.1.7)
