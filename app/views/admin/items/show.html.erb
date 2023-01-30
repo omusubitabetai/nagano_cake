@@ -24,7 +24,7 @@
 
       <div class="info-content">
         <p class="info-head">税込価格(税抜価格)</p>
-        <p>¥ <%= @item.price %> (税込)</p>
+        <p><%= @item.tax_in_price %> (<%= @item.price %>) 円</p>
         <p class="info-head">販売ステータス</p>
           <%  if @item.is_active == true %>
         <p class="text-success ">販売中</p>

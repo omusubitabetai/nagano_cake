@@ -14,13 +14,15 @@
             <% end %>
             </thead>
           <tbody>
+            <% sum = 0 %>
             <% @cart_items.each do |cart_item| %>
-            <% @order.total_payment+= cart_item.item.price*1.1.floor*cart_item.amount %>
+            <%# @order.total_payment+= cart_item.item.price*1.1.floor*cart_item.amount %>
+            <% sum += (cart_item.item.price*1.1).floor*cart_item.amount %>
             <tr>
               <td class="align-middle" style="word-break:break-all"><%= image_tag cart_item.item.image, size: "50x50", fallback: "no_image.jpg"%><%= cart_item.item.name %></td>
-              <td class="align-middle"><%= cart_item.item.price*1.1.floor %></td>
+              <td class="align-middle"><%= (cart_item.item.price*1.1).floor %></td>
               <td class="align-middle"><%= cart_item.amount %></td>
-              <td class="align-middle"><%= cart_item.item.price*1.1.floor*cart_item.amount %></td>
+              <td class="align-middle"><%= (cart_item.item.price*1.1).floor*cart_item.amount %></td>
             </tr>
            <% end %>
           </tbody>
@@ -34,8 +36,8 @@
      <div class="col-sm-3">
           <table class="table table-bordered">
             <tr><th class="table-active" style="width:50%">送料</th><td><%= @order.shipping_cost %></td></tr>
-            <tr><th class="table-active" style="width:50%">商品合計</th><td><%= @order.total_payment %></td></tr>
-            <tr><th class="table-active" style="width:50%">請求合計</th><td><%= @order.total_payment+= @order.shipping_cost %></td></tr>
+            <tr><th class="table-active" style="width:50%">商品合計</th><td><%= sum %></td></tr>
+            <tr><th class="table-active" style="width:50%">請求合計</th><td><%= @order.total_payment = sum + @order.shipping_cost %></td></tr>
           </table>
      </div>
 
